@@ -1,0 +1,14 @@
+
+@import '~styles/settings.scss';
+
+footer {
+    position:fixed;
+    background-color:$white;
+    bottom:0;
+    width:100%;
+    padding:20px 0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: $box-shadow-default;
+}

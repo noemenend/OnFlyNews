@@ -1,0 +1,49 @@
+{
+  "name": "OnFlyNews",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode=development",
+    "start": "webpack-dev-server --hot --inline --mode=development",
+    "eslint": "eslint .eslintrc.js",
+    "server": "json-server --watch --port=3001 ./src/data/songs.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.keepcoding.io/BootcampWeb5-alumnos/03-Frontend-Avanzado-alumnos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.0.1",
+    "@babel/preset-env": "^7.0.0",
+    "autoprefixer": "^9.1.5",
+    "babel-loader": "^8.0.2",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^1.0.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "exports-loader": "^0.7.0",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "image-webpack-loader": "^4.3.1",
+    "mini-css-extract-plugin": "^0.4.2",
+    "node-sass": "^4.9.3",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.18.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.8"
+  },
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "critical-plugin": "^1.0.6",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.4",
+    "webpack-merge": "^4.1.4"
+  }
+}

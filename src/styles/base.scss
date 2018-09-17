@@ -1,0 +1,9 @@
+@import 'normalize.scss';
+@import "~bootstrap/scss/bootstrap";
+@import '~styles/utils.scss';
+@import '~styles/settings.scss';
+
+
+div,p {
+    font-family:$font-family;
+}

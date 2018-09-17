@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Karla|Spectral');
+@import '~styles/utils';
+
+
+$primary-color:#a3a9aa;
+$grey:rgba(200,200,200,1);
+$white:#fefefe;
+$link-hover:#52d1dc;
+$link-menu-background-hover:#475b5a;
+$font-family-main:'Spectral', serif;
+$font-family: 'Karla', sans-serif;
+$box-shadow-default:1px -5px 5px -5px $grey;
+
+$font-size-xxxl:36;
+$font-size-xxl:24;
+$font-size-xl:20;
+$font-size-l:16;
+$font-size:14;
+$font-size-xs:10;
+$font-size-xxs:8;
+
+// Breakpoints
+
+
+$breakpoint-tablet-portrait: 600px;
+
+$breakpoint-tablet-landscape: 900px;
+
+$breakpoint-desktop:1200px;
+
+
