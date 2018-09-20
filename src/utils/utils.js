@@ -4,6 +4,5 @@ export const appendComponent = (parent,components) => {
     })
 }
 
-export default {
-    appendComponent
-}
+ 
+

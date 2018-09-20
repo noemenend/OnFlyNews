@@ -6,10 +6,11 @@ $primary-color:#a3a9aa;
 $grey:rgba(200,200,200,1);
 $white:#fefefe;
 $link-hover:#52d1dc;
+$link:#6fbcc2;
 $link-menu-background-hover:#475b5a;
 $font-family-main:'Spectral', serif;
 $font-family: 'Karla', sans-serif;
-$box-shadow-default:1px -5px 5px -5px $grey;
+$box-shadow-default:1px -5px 5px -5px $primary-color;
 
 $font-size-xxxl:36;
 $font-size-xxl:24;

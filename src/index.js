@@ -5,15 +5,15 @@ import 'bootstrap';
 import { makeHeader } from 'componentes/header/header-component';
 //import {makeImage} from 'componentes/image/image-component';
 import {appendComponent} from 'utils/utils.js';
-//import {makeFooter} from 'componentes/footer/footer-component';
-//import {renderSongs} from 'componentes/songs/songs-component';
+import {makeFooter} from 'componentes/footer/footer-component';
+import {renderArticles} from 'componentes/articles/articles-component';
 //import {makeVideo} from './componentes/video/video-component';
 document.addEventListener('DOMContentLoaded', () =>{
      const components = [
         makeHeader({title:'OnFlyNews'}),
-        //renderSongs(),
+        renderArticles(),
         //makeVideo(),
-        //makeFooter()
+        makeFooter()
      ];
     appendComponent(document.body, components);
 });

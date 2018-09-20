@@ -1,0 +1,24 @@
+@import '~styles/settings';
+
+.btn-primary {
+    background-color:$link;
+    border-color:$link;
+    width:90px;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    &:hover {
+        background-color:$link-hover;
+        border-color:$link-hover;
+    }
+}
+
+.avatar{
+    height: 30px;
+    width: 30px;
+    padding-left:3px;
+    display:in-line;
+}
+
+.post{
+    padding-left:3px;
+}
+

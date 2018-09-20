@@ -18,6 +18,18 @@ header.innerHTML=`<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <li class="nav-item">
       <a class="nav-link" href="#"><i class="fas fa-sign-in-alt"></i>Sign up</a>
     </li>
+    <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Categories
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+      <a class="dropdown-item" href="#">Technology</a>
+      <a class="dropdown-item" href="#">Nature</a>
+      <a class="dropdown-item" href="#">Culture & Cinema</a>
+      <a class="dropdown-item" href="#">Science</a>
+      <a class="dropdown-item" href="#">Sports</a>
+    </div>
+  </li>
   </ul>
   <form class="form-inline my-2 my-lg-0">
   <input class="form-control mr-sm-2" type="text" placeholder="Search">
