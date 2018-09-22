@@ -26,6 +26,7 @@ var page = function({ title, template, chunks, filename }) {
 
 var commonConfig = {
   entry: {
+    article:['@babel/polyfill', path.join(__dirname, 'src', 'pages', 'article', 'index')],
     articles: ['@babel/polyfill', path.join(__dirname, 'src', 'pages', 'articles', 'index')]
   },
   output: {
@@ -35,10 +36,16 @@ var commonConfig = {
   plugins: [
     new Dotenv(),
     page({
-      title: 'OnFlyNews',
+      title: 'Articles',
       template: path.join(__dirname, 'src', 'pages', 'articles', 'index.html'),
       chunks: ['articles'],
       filename: path.resolve(__dirname, 'dist', 'index.html')
+    }),
+    page({
+      title: 'Article',
+      template: path.join(__dirname, 'src', 'pages', 'article', 'index.html'),
+      chunks: ['article'],
+      filename: path.resolve(__dirname, 'dist','article', 'index.html')
     })
   ],
   module: {
