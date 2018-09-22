@@ -1,127 +1,145 @@
-/*eslint-disable*/
+/* eslint-disable */
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var merge = require('webpack-merge');
-
-var MiniCssExtractPlugin=require('mini-css-extract-plugin');
+var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var CriticalPlugin = require('critical-plugin');
+var Dotenv = require('dotenv-webpack');
+var OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+var UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
+
+var page = function({ title, template, chunks, filename }) {
+  return new HtmlWebpackPlugin(
+    {
+      title: title,
+      template: template,
+      chunks: chunks,
+      minify: {
+        collapseWhitespace: true
+      },
+      filename: filename
+    }
+  )
+}
 
 var commonConfig = {
-    entry:path.join(__dirname,'src','index'),
-    output: {
-        filename:'bundle[hash].js',
-        path:path.resolve(__dirname,'dist')
-    },
-
-    plugins: [
-        new HtmlWebpackPlugin(
-            {
-                title:'Play',
-                template:path.join(__dirname,'src','index.html'),
-                minify: {
-                    collapseWhitespace:true
-                }
-            }
-          )
-        
-
-    ] ,
-    module: {
-        rules: [
-          {
-            test: /\.(js)$/,
-            exclude: /node_modules/,
-            use: "babel-loader"
-          },
-          {
-            test: /\.(gif|png|jpe?g|svg)$/i,
-            use: [
-              'file-loader',
-              {
-                loader: 'image-webpack-loader'
-              },
-            ],
-          }
-        ]
+  entry: {
+    articles: ['@babel/polyfill', path.join(__dirname, 'src', 'pages', 'articles', 'index')]
+  },
+  output: {
+    filename: '[name][hash].js',
+    path: path.resolve(__dirname, 'dist')
+  },
+  plugins: [
+    new Dotenv(),
+    page({
+      title: 'OnFlyNews',
+      template: path.join(__dirname, 'src', 'pages', 'articles', 'index.html'),
+      chunks: ['articles'],
+      filename: path.resolve(__dirname, 'dist', 'index.html')
+    })
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.(js)$/,
+        exclude: /node_modules/,
+        use: "babel-loader"
       },
-    resolve: {
-        alias: {
-            assets:path.resolve(__dirname,'src','assets'),
-            styles:path.resolve(__dirname, 'src', 'styles'),
-            utils:path.resolve(__dirname,'src','utils'),
-            componentes:path.resolve(__dirname,'src','componentes'),
-            services:path.resolve(__dirname, 'src','services')
-        }
-    },
-    devtool:'source-map'
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+          'file-loader',
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              name: "assets/[name].[hash].[ext]",
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(html|ejs)$/,
+        use: ['html-loader', 'ejs-html-loader']
+      }
+    ]
+  },
+  resolve: {
+    alias: {
+      components: path.resolve(__dirname, 'src', 'components'),
+      assets: path.resolve(__dirname, 'src', 'assets'),
+      styles: path.resolve(__dirname, 'src', 'styles'),
+      utils: path.resolve(__dirname, 'src', 'utils'),
+      data: path.resolve(__dirname, 'src', 'data'),
+      services: path.resolve(__dirname, 'src', 'services')
+    }
+  },
+  devtool: 'source-map'
 };
 
 var devConfig = {
-    module: {
-        rules: [
-          {
-            test: /\.scss$/,
-            use: [
-              'style-loader',
-              'css-loader',
-              {
-                // Loader for webpack to process CSS with PostCSS
-                loader: 'postcss-loader?url=false&sourceMap=true',
-                options: {
-                    plugins: function () {
-                        return [
-                            require('autoprefixer')
-                        ];
-                    }
-                }
-              },
-              'sass-loader'
-            ]
-          },
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
         ]
       },
-    devServer: {
-        open:true,
-        overlay:true,
-        port:3000,
-        hot:true,
-        contentBase:path.join(__dirname,'src'),
-        watchContentBase:true
-    }
+    ]
+  },
+  devServer: {
+    overlay: true,
+    port: 3000
+  },
 };
 
-var prodConfig= {
-    plugins: [
-        new MiniCssExtractPlugin({
-          filename: '[name].[hash].css'
-        }),
-        new CleanWebpackPlugin(['dist']),
-        new CriticalPlugin({
-          src:'index.html',
-          inline:true,
-          minify:true,
-          dest:'index.html'
-        })
-      ],
-      module: {
-        rules: [
-          {
-            test: /\.scss$/,
-            use: [
-              MiniCssExtractPlugin.loader,
-              'css-loader',
-              'sass-loader'
-            ]
-          },
+var prodConfig = {
+  optimization: {
+    minimizer: [
+      new OptimizeCSSAssetsPlugin(
+        {
+          cssProcessorOptions: { map: { inline: false } }
+        }
+      ),
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true // set to true if you want JS source maps
+      }),
+    ]
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].[hash].css'
+    }),
+    new CleanWebpackPlugin(['dist']),
+    new CriticalPlugin({
+      src: path.join(__dirname, 'src', 'pages', 'articles', 'index.html'),
+      inline: true,
+      minify: true,
+      dest: path.join(__dirname, 'dist', 'index.html')
+    })
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader'
         ]
       },
-    
+    ]
+  },
 };
 
-module.exports = (env,argv) => 
-  argv.mode === 'development'?merge(commonConfig,devConfig):
-  merge(commonConfig,prodConfig);
-   
-    
+module.exports = (env, argv) =>
+  argv.mode === 'development' ?
+    merge(commonConfig, devConfig) :
+    merge(commonConfig, prodConfig);

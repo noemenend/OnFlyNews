@@ -1,12 +1,11 @@
 
-import {makeContainer} from 'componentes/container/container-component.js';
 import { appendComponent} from "../../utils/utils";
 import './article-styles.scss';
+import '../../assets/profile_placeholder.png'
 
 
 
-export const makeArticleDesc = ({ title, img, video, articleSummary,authorname,authorprofileImg,publishDate} = { title: 'No title', img: 'http://placehold.it/750x300', articleSummary:'No article' }) => {
-  const container = makeContainer();
+export const createArticle= ({ title, img, video, articleSummary,authorname,authorprofileImg,publishDate} = { title: 'No title', img: 'http://placehold.it/750x300', articleSummary:'No article' }) => {
   const article = document.createElement('div');
   article.classList.add('row');
  
@@ -14,7 +13,7 @@ export const makeArticleDesc = ({ title, img, video, articleSummary,authorname,a
  
 
   if (!imgAvatar) {
-    imgAvatar='/assets/profile_placeholder.png';
+    imgAvatar='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png';
   }
   if (!video) {
     article.innerHTML = `<article class="col-sm-6"><figure>
@@ -32,14 +31,15 @@ export const makeArticleDesc = ({ title, img, video, articleSummary,authorname,a
   article.innerHTML += `<div class="col-sm-6">
     <h2>${title}</h2>
     <p>${articleSummary}</p>
-    <a href="#" class="btn btn-primary">Más &rarr;</a><span class="post">Publicado el ${publishDate} por </span> <a href="#">${authorname} <img src=${imgAvatar} class="avatar img-responsive"></a>
+    <p>Publicado por <span class="postAuthor">${authorname} <img src=${imgAvatar} class="avatar img-responsive"></p>
+    <a href="#" ><i class="far fa-comments"></i> Comentarios</a>
  </article>
   `;
   
-  appendComponent(container,[article]);
-  return container;
+  return article;
 };
 
 export default {
-  makeArticleDesc
+  createArticle
 };
+

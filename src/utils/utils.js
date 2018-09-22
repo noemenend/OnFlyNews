@@ -4,5 +4,12 @@ export const appendComponent = (parent,components) => {
     })
 }
 
+export const sleep = time => new Promise(response => setTimeout(response, time));
+
+
+export default {
+    appendComponent
+  };
+
  
 

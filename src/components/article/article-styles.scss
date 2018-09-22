@@ -1,5 +1,7 @@
 @import '~styles/settings';
 
+
+@import '~styles/utils';
 .btn-primary {
     background-color:$link;
     border-color:$link;
@@ -18,7 +20,12 @@
     display:in-line;
 }
 
-.post{
+.postAuthor{
     padding-left:3px;
+    color:$link-menu-background-hover;
+    font-style:italic;
+    @include fontSize($font-size-xs);
+    
 }
+
 
