@@ -1,0 +1,26 @@
+.container-comment{
+padding: 10px 12px;
+overflow: hidden;
+-webkit-border-radius: 4px 4px 4px 4px;
+-moz-border-radius: 4px 4px 4px 4px;
+border-radius: 4px 4px 4px 4px;
+margin-bottom: 20px;
+background: $grey;
+}
+
+
+.comment-author{
+    border-bottom: 1px solid #E5E5E5;
+}
+
+#start{
+    padding:10px 10px;
+}
+
+.aname{
+    color:$author-comment;
+}
+
+.comment-content{
+    padding-top:10px;
+}

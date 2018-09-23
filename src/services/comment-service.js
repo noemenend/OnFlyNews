@@ -10,6 +10,11 @@ class CommentService {
     return this.APIServiceInstance.get(`${this.model}/?idArticle=${idArticle}`);
   }
 
+  async postComment(comment) {
+    return this.APIServiceInstance.post(comment, this.model);
+  }
+
+
  
 }
 

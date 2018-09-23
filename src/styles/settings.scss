@@ -4,9 +4,12 @@
 $primary-color:#a3a9aa;
 $grey:rgba(200,200,200,1);
 $white:#fefefe;
+$pink:#f1b1d1;
 $link-hover:#52d1dc;
 $link:#6fbcc2;
+$author-comment:#106b72;
 $link-menu-background-hover:#475b5a;
+
 $font-family-main:'Spectral', serif;
 $font-family: 'Karla', sans-serif;
 $box-shadow-default:1px -5px 5px -5px $primary-color;
@@ -29,4 +32,12 @@ $breakpoint-tablet-landscape: 900px;
 
 $breakpoint-desktop:1200px;
 
-
+@keyframes heartBeat {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.5);
+    }
+  }
+  

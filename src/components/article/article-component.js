@@ -15,7 +15,7 @@ export const createArticle= ({ id,title, img, video, articleSummary,authorname,a
   }
   if (!video) {
     article.innerHTML = `<article class="col-sm-6"><figure>
-      <img class="card-img-top img-fluid rounded" src=${img} alt="Card image cap">
+      <img class="card-img-top img-fluid  rounded" src=${img} alt="${caption}">
       <figcaption class="figure-caption text-right">${caption}</figcaption>
       </figure>`;
   } else {
@@ -28,17 +28,14 @@ export const createArticle= ({ id,title, img, video, articleSummary,authorname,a
     <h2>${title}</h2>
     <p>${articleSummary}</p>
     <p>Publicado por <span class="postAuthor">${authorname} <img src=${imgAvatar} class="avatar img-responsive"></p>
-    <a href="/article/?id=${id}" ><i class="far fa-comments"></i><span id="comment${id}">${numComments} </span> Comentarios</a>
+    <a href="/article/?id=${id}#comments-list" ><i class="far fa-comments"></i><span id="comment${id}">${numComments} </span> Comentarios</a>
  </article>
   `;
   
   return article;
 };
 
-export
-
-const updateArticle=({numComments,id})=>{
-    console.log(id + " ---- " + numComments);
+export const updateArticle=({numComments,id})=>{
     const numero = document.getElementById('comment'+id);
     numero.innerHTML=numComments;
 

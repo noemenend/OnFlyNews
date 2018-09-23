@@ -14,6 +14,22 @@ body{
 
 h1,h2,h3,h4,h5,h6{
     font-family:$font-family-main;
+   
+}
+h2{
+    @include fontSize($font-size-xxxl);
+}
+
+h3{
+    @include fontSize($font-size-xxl);
+}
+
+h4,h5 {
+    @include fontSize($font-size-xl);
+}
+
+h6{
+    @include fontSize($font-size-l);
 }
 
 
