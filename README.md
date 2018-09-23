@@ -30,6 +30,7 @@ Las caracteristicas de la plataforma son:
 Instrucciones de despliegue:
 1. Descargar los archivos `git clone https://github.com/noemenend/OnFlyNews.git`
 2. Instalar paquetes `npm install`
+3. Renombrar el archivo data.json.example a data.json
 3. Arrancar servidor de comentarios `npm run json-server`
 4. Arrancar servidor de webpack `npm run serve`
 
