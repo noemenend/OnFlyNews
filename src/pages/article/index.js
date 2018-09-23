@@ -8,9 +8,11 @@ import {createComments} from 'components/comments/comments-component';
 import '@babel/polyfill';
 import 'whatwg-fetch';
 import 'bootstrap';
+import PubSub from 'pubsub-js';
 
+
+const loadArticle=()=>{
 const ArticleServiceInstance = new ArticleService();
-
 const query = queryString.parse(window.location.search);
 const articleId = query && query.id;
 const articleDetail = document.getElementById('article-detail');
@@ -23,6 +25,13 @@ if (articleId) {
   });
   
 }
+}
 
-
+loadArticle();
 updateHeader({title:'OnFlyNews'});
+
+PubSub.subscribe('reload', () => {
+  loadArticle();
+  
+});
+

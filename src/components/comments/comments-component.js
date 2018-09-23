@@ -8,6 +8,7 @@ import PubSub from 'pubsub-js';
 export const createComments=({id})=>{
     const commentServiceInstance = new CommentService();
     const comments = document.getElementById('comments-list');
+    comments.innerHTML='';
     commentServiceInstance.getCommentsByArticleId(id).then((commentJSON) => {
         if (commentJSON.length === 0) {
           comments.innerHTML='<div class="container-comment">No Comments</div>'
@@ -72,13 +73,17 @@ function validaCampos(){
    return false;
  } else {
    if (! /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(email)) {
-     errors.innerHTML='<p>Please, fill the email as follows aaaaa@bbbb.com</p>';
+     errors.innerHTML='<p>Incorrect format. Please, fill the email as follows aaaaa@bbbb.com</p>';
      return false;
    }
  }
  if(comment.trim() === "") {
   errors.innerHTML='<p>Please, write a comment</p>';
   return false;
+} else {
+   if (comment.length>500) {
+     errors.innerHTML='<p>The comment exceeds the maximum size (500 characters)';
+   }
 }
 return true;
 

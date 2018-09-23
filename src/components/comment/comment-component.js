@@ -5,7 +5,7 @@ export const createComment=({id,idArticle,name,surname,comment,email}) =>{
     ucomment.id="container-comment";
     ucomment.innerHTML=`
     <div class="comment-author"><span class="aname">${name} ${surname} </span> <i id="start" class="fas fa-star"></i>${email}</div>
-    <div class="comment-content">${comment}</div>`;
+    <div class="comment-content"><p>${comment}</p></div>`;
 
     return ucomment;
     

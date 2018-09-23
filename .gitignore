@@ -1,4 +1,4 @@
-data/db.json
 node_modules
 dist
 .env
+src/data/data.json
