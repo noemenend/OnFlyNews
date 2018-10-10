@@ -12,11 +12,10 @@
 
 .error-messages {
   margin-top: 10px;
-  //padding: 10px 12px;
   overflow: hidden;
-  //-webkit-border-radius: 4px 4px 4px 4px;
-  //-moz-border-radius: 4px 4px 4px 4px;
-  border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
   margin-bottom: 10px;
   background: rgb(202, 94, 94);
 }
