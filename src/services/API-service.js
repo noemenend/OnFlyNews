@@ -1,4 +1,4 @@
-import { sleep } from 'utils/utils';
+import { sleep } from "utils/utils";
 
 class APIService {
   constructor() {
@@ -14,7 +14,7 @@ class APIService {
       }
       return response.json();
     } catch (error) {
-      console.warn('Error', error); // eslint-disable-line no-console
+      console.warn("Error", error); // eslint-disable-line no-console
       return { error };
     }
   }
@@ -22,9 +22,9 @@ class APIService {
   async post(body, uri) {
     try {
       const response = await fetch(`${this.baseUrl}${uri}`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json"
         },
         body: JSON.stringify(body)
       });
@@ -33,7 +33,7 @@ class APIService {
       }
       return true;
     } catch (error) {
-      console.warn('Error', error); // eslint-disable-line no-console
+      console.warn("Error", error); // eslint-disable-line no-console
       return { error };
     }
   }

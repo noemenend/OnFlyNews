@@ -1,9 +1,9 @@
-import APIService from './API-service';
+import APIService from "./API-service";
 
 class ArticleService {
   constructor() {
     this.APIServiceInstance = new APIService();
-    this.model = 'articles';
+    this.model = "articles";
   }
 
   async getArticles() {

@@ -1,9 +1,9 @@
-import APIService from './API-service';
+import APIService from "./API-service";
 
 class CommentService {
   constructor() {
     this.APIServiceInstance = new APIService();
-    this.model = 'comments';
+    this.model = "comments";
   }
 
   async getCommentsByArticleId(idArticle) {
@@ -13,9 +13,6 @@ class CommentService {
   async postComment(comment) {
     return this.APIServiceInstance.post(comment, this.model);
   }
-
-
- 
 }
 
 export default CommentService;

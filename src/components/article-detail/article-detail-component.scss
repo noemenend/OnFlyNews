@@ -1,34 +1,33 @@
-@import '~styles/settings';
-@import '~styles/utils';
+@import "~styles/settings";
+@import "~styles/utils";
 
-
-.publicated{
-    text-align: right;
-    padding-bottom: 3px;
+.publicated {
+  text-align: right;
+  padding-bottom: 3px;
 }
 
-#article-detail{
-    padding-bottom:10px;
+#article-detail {
+  padding-bottom: 10px;
 }
 
 .like-button {
-    outline-width: 0;
-    @include fontSize($font-size-xl);
-    background-color: transparent;
-    color: $link;
-    border: none;
+  outline-width: 0;
+  @include fontSize($font-size-xl);
+  background-color: transparent;
+  color: $link;
+  border: none;
 
-    .fas {
-      animation-name: heartBeat;
-      animation-duration: 1s;
-      animation-iteration-count: infinite;
-      animation-direction: alternate;
-    }
+  .fas {
+    animation-name: heartBeat;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
   }
+}
 
-  .back {
-      color:$link;
-      &:hover{
-          color:$link-hover;
-      }
+.back {
+  color: $link;
+  &:hover {
+    color: $link-hover;
   }
+}

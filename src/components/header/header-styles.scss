@@ -1,69 +1,55 @@
-@import '~styles/settings';
-@import '~styles/utils';
+@import "~styles/settings";
+@import "~styles/utils";
 
 .navbar-brand {
-
-    @include fontSize($font-size-xxxl);
-    font-family: $font-family-main;
-    .logo{
-        height: 40px;
-        padding-right: 5px;
-    }
-    
+  @include fontSize($font-size-xxxl);
+  font-family: $font-family-main;
+  .logo {
+    height: 40px;
+    padding-right: 5px;
+  }
 }
 
-.bg-light{
-    background-color:$primary-color !important;
+.bg-light {
+  background-color: $primary-color !important;
 }
 
 .nav-link {
-    font-family:$font-family;
-    &:hover{
-        color:$link-hover;
-    }
+  font-family: $font-family;
+  &:hover {
+    color: $link-hover;
+  }
 }
-
 
 #navbarNavDropdown .navbar-nav li > a {
-	text-transform: capitalize;
-	color:$link-menu-background-hover;
-    transition: background-color .2s, color .2s;
-    font-family: $font-family;
-	
-	&:hover,
-	&:focus {
-		background-color:$link-menu-background-hover;
-		color: #fff;
-    }
-    
-    i {
-        font-size : 1em;
-        padding-right:5px;
-    }
+  text-transform: capitalize;
+  color: $link-menu-background-hover;
+  transition: background-color 0.2s, color 0.2s;
+  font-family: $font-family;
+
+  &:hover,
+  &:focus {
+    background-color: $link-menu-background-hover;
+    color: #fff;
+  }
+
+  i {
+    font-size: 1em;
+    padding-right: 5px;
+  }
 }
-
-/*#navbarNavDropdown .navbar-nav li.active > a {
-	background-color:$link-menu-background-hover;
-	color: #fff;
-}*/
-
 
 .btn-outline-success {
-    color: $white;
-    background-color:  none;
-    background-image: none;
-    border-color:#a6e5eb;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  color: $white;
+  background-color: none;
+  background-image: none;
+  border-color: #a6e5eb;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
-    &:hover {
-        background-color:$link-menu-background-hover;
-        color: #fff;
-        border-color:#a6e5eb
-    }
+  &:hover {
+    background-color: $link-menu-background-hover;
+    color: #fff;
+    border-color: #a6e5eb;
+  }
 }
-
-
-
-
-
-

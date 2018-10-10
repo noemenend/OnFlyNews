@@ -1,32 +1,29 @@
-
-@import '~styles/settings.scss';
+@import "~styles/settings.scss";
 
 footer {
-    bottom: 0;
-    width: 100%;
-    position: fixed;
-    box-shadow: $box-shadow-default;
-    flex: 0 0 auto;
-    .footer-block {
-      margin: 20px 0;
-    }
-    .container {
-    display:flex;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+  box-shadow: $box-shadow-default;
+  flex: 0 0 auto;
+  .footer-block {
+    margin: 20px 0;
+  }
+  .container {
+    display: flex;
     justify-content: center;
     align-items: center;
-    
-    }
-    .social-media-button {
-        margin-left:5px;
-        background-color:$primary-color;
-        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  .social-media-button {
+    margin-left: 5px;
+    background-color: $primary-color;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
-        &:hover {
-            background-color:$link-menu-background-hover;
-            color: #fff;
-            border-color:#a6e5eb;
-        }
+    &:hover {
+      background-color: $link-menu-background-hover;
+      color: #fff;
+      border-color: #a6e5eb;
     }
   }
-
-  
+}

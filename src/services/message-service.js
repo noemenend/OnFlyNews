@@ -1,10 +1,10 @@
-import APIService from './API-service';
+import APIService from "./API-service";
 
 class MessageService {
   constructor() {
     this.baseUrl = process.env.API_URL;
     this.APIServiceInstance = new APIService();
-    this.model = 'messages';
+    this.model = "messages";
   }
 
   async postMessage(message) {
