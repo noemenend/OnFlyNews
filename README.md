@@ -1,5 +1,6 @@
 # OnFlyNews
 
+![](https://flaviocopes.com/webpack/banner.jpg)
 ---
 
 Este proyecto es el frontend de un portal de noticias responsive similar a medium.com (https://medium.com/), una plataforma social de publicación de artículos de diferentes contenidos.
