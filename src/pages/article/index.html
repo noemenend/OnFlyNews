@@ -1,26 +1,29 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-  <%- include('../partials/head.ejs') %>
-</head>
-<body>
-  <%- include('../partials/header.ejs') %>
-  <div class="container">
-    <div id="article-detail" class="row align-items-center">
-    </div>
-  </div>
-  <div class="container">
 
-		<div id="comments-section" class="row align-items-center">
-        <div class="col-10 mx-auto">
-        <h4 class="title">Comentarios</h4>
+<head>
+    <%- include('../partials/head.ejs') %>
+</head>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+        <div class="container">
+            <div id="article-detail" class="row align-items-center">
+            </div>
         </div>
-        <div id="comments-list" class="col-10 mx-auto">
+        <div class="container">
+
+            <div id="comments-section" class="row align-items-center">
+                <div class="col-10 mx-auto">
+                    <h4 class="title">Comentarios</h4>
+                </div>
+                <div id="comments-list" class="col-10 mx-auto">
+                </div>
+            </div>
+            <div class="container-form">
+                <%- include('../partials/comment-form.ejs') %>
+            </div>
         </div>
-  </div> 
-  <div class="container-form">
- <%- include('../partials/comment-form.ejs') %>    
-  </div>
-  <%- include('../partials/footer.ejs') %>
+        <%- include('../partials/footer.ejs') %>
 </body>
+
 </html>

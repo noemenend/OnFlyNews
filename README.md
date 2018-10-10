@@ -31,7 +31,12 @@ Instrucciones de despliegue:
 1. Descargar los archivos `git clone https://github.com/noemenend/OnFlyNews.git`
 2. Instalar paquetes `npm install`
 3. Renombrar el archivo data.json.example a data.json
-3. Arrancar servidor de comentarios `npm run json-server`
-4. Arrancar servidor de webpack `npm run serve`
+4. Renombrar el archivo .env.example a .env (API_URL=http://localhost:3001/)
+5. Arrancar servidor de comentarios `npm run json-server`
+6. Arrancar servidor de webpack `npm start`
+
+# Author
+
+---
 
   Este proyecto ha sido realizado por [Noelia Muñiz Menéndez](https://github.com/noemenend)

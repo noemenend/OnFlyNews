@@ -2,34 +2,44 @@
 @import "~bootstrap/scss/bootstrap";
 @import '~styles/utils.scss';
 @import '~styles/settings.scss';
-
-
-div,p {
-    font-family:$font-family;
+div,
+p {
+    font-family: $font-family;
     @include fontSize($font-size);
 }
-body{
+
+body {
     min-height: 100%;
 }
 
-h1,h2,h3,h4,h5,h6{
-    font-family:$font-family-main;
-   
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+#linkTitle {
+    font-family: $font-family-main;
 }
-h2{
+
+h2 {
     @include fontSize($font-size-xxxl);
 }
 
-h3{
+h3,
+#linkTitle {
     @include fontSize($font-size-xxl);
 }
 
-h4,h5 {
+h4,
+h5 {
     @include fontSize($font-size-xl);
 }
 
-h6{
+h6 {
     @include fontSize($font-size-l);
 }
 
-
+footer {
+    background-color: $grey;
+}
